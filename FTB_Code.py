@@ -97,26 +97,23 @@ def findColorSpot(picture, color):
 #code starts here
 
 pic = takePicture()
-x = findColorSpot(pic,1)
-y = findColorSpot(pic,2)
-z = findColorSpot(pic,3)
-q = findColorSpot(pic,4)
+x = findColorSpot(pic,1) # for red
+y = findColorSpot(pic,2) # for green
+z = findColorSpot(pic,3) # for blue
+q = findColorSpot(pic,4) # for yellow
 
+#confirming that these values are 0
 print(x)
 print(y)
 print(z)
 print(q)
 
-#turnTo(randrange(0,360))
 show(pic)
 while True:
     q1 = askQuestion("Do you want to find a color?", ["Yes", "No"])
-
-
     if q1 == "No":
         print("Come Back Soon!")
         break
-
     if q1 == "Yes":    
         q2 = askQuestion("What color do you want to find?", ["Red", "Blue", "Green", "Yellow"])
         if q2 == "Red":
@@ -178,10 +175,65 @@ while True:
                         pic = takePicture()
                         y = findColorSpot(pic,2)
                         print(y)
+                        print("Found Green Blob!")
+                        continue
+        if q2 == "Blue":
+            while (z == 0):
+                turnBy(randrange(90,270))
+                pic = takePicture()
+                z = findColorSpot(pic,3)
+                show(pic)
+                print(z)
+                stop()
+            if z != 0:
+                    stop()
+                    print(z)
+                    while z < 118:
+                        turnBy(5)
+                        pic = takePicture()
+                        z = findColorSpot(pic,3)
+                        print(z)
+                        stop()
+                    while z > 138:
+                        turnBy(-5)
+                        pic = takePicture()
+                        z = findColorSpot(pic,3)
+                        print(z)
+                        stop()
+                    if z >= 118 and z <= 138:
+                        forward(2,2.25)
+                        pic = takePicture()
+                        z = findColorSpot(pic,3)
+                        print(z)
                         print("Found Blue Blob!")
                         continue
         if q2 == "Yellow":
-            stop()
-        if q2 == "Blue":
-            stop()
-                    
+            while (q == 0):
+                turnBy(randrange(90,270))
+                pic = takePicture()
+                q = findColorSpot(pic,4)
+                show(pic)
+                print(q)
+                stop()
+            if q != 0:
+                    stop()
+                    print(q)
+                    while q < 118:
+                        turnBy(5)
+                        pic = takePicture()
+                        q = findColorSpot(pic,4)
+                        print(q)
+                        stop()
+                    while q > 138:
+                        turnBy(-5)
+                        pic = takePicture()
+                        q = findColorSpot(pic,4)
+                        print(q)
+                        stop()
+                    if q >= 118 and q <= 138:
+                        forward(2,2.25)
+                        pic = takePicture()
+                        q = findColorSpot(pic,4)
+                        print(q)
+                        print("Found Yellow Blob!")
+                        continue

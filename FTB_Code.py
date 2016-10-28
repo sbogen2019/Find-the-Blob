@@ -128,13 +128,13 @@ while True:
                     stop()
                     print(x)
                     while x < 118:
-                        turnBy(5)
+                        turnBy(3.14159)
                         pic = takePicture()
                         x = findColorSpot(pic,1)
                         print(x)
                         stop()
                     while x > 138:
-                        turnBy(-5)
+                        turnBy(-3.14159)
                         pic = takePicture()
                         x = findColorSpot(pic,1)
                         print(x)
@@ -159,13 +159,13 @@ while True:
                     stop()
                     print(x)
                     while y < 118:
-                        turnBy(5)
+                        turnBy(3.14159)
                         pic = takePicture()
                         y = findColorSpot(pic,2)
                         print(y)
                         stop()
                     while y > 138:
-                        turnBy(-5)
+                        turnBy(-3.14159)
                         pic = takePicture()
                         y = findColorSpot(pic,2)
                         print(y)
@@ -176,6 +176,7 @@ while True:
                         y = findColorSpot(pic,2)
                         print(y)
                         print("Found Green Blob!")
+                        backward(2,2.25)
                         continue
         if q2 == "Blue":
             while (z == 0):
@@ -189,13 +190,13 @@ while True:
                     stop()
                     print(z)
                     while z < 118:
-                        turnBy(5)
+                        turnBy(3.1415)
                         pic = takePicture()
                         z = findColorSpot(pic,3)
                         print(z)
                         stop()
                     while z > 138:
-                        turnBy(-5)
+                        turnBy(-3.1415)
                         pic = takePicture()
                         z = findColorSpot(pic,3)
                         print(z)
@@ -206,6 +207,7 @@ while True:
                         z = findColorSpot(pic,3)
                         print(z)
                         print("Found Blue Blob!")
+                        backward(2,2.25)
                         continue
         if q2 == "Yellow":
             while (q == 0):
@@ -219,13 +221,13 @@ while True:
                     stop()
                     print(q)
                     while q < 118:
-                        turnBy(5)
+                        turnBy(3.1415926535897932)
                         pic = takePicture()
                         q = findColorSpot(pic,4)
                         print(q)
                         stop()
                     while q > 138:
-                        turnBy(-5)
+                        turnBy(-3.1415926535897932)
                         pic = takePicture()
                         q = findColorSpot(pic,4)
                         print(q)
@@ -236,4 +238,5 @@ while True:
                         q = findColorSpot(pic,4)
                         print(q)
                         print("Found Yellow Blob!")
+                        backward(2,2.25)
                         continue
